@@ -1,0 +1,222 @@
+<app-toolbar-med></app-toolbar-med>
+<p class="nav-place-med"></p>
+<button  mat-icon-button routerLink="/contexteFamilial"><mat-icon>assignment</mat-icon>Accès formulaire soignant</button>
+
+<section>
+  <div>
+    <div class="">
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Coordonnées de la famille
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <div class="content">
+                <label>Adresse de la famille :</label>
+                <input type="datetime-local" matInput>
+              </div>
+              <div class="content">
+                <label>Nom de la mère :</label>
+                <input type="text">
+                <label>Prénom de la mère :</label>
+                <input type="text">
+              </div><br>
+              <div>
+                <label>Nom du second parent :</label>
+                <input type="text">
+                <label>Prénom du second parent :</label>
+                <input type="text">
+              </div><br>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Données générales de l'enfant
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <div class="content">
+                <label>Nom : </label>
+                <input type="text">
+                <label>Prénom : </label>
+                <input type="text">
+                <label>Sexe : </label>
+                <input type="text">
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Données générales de l'hospitalisation
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <label>Hospitalisé en :</label>
+              <input type="text">
+              <label>du : <input type="date"> au : <input type="date"></label><br>
+              <label>Adressé par : <input type="text"></label><br>
+              <label>Motif d'admission : <input type="text"></label><br>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Période anténatale
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+             <input type="checkbox"> Période anténatale : <input type="text">
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+             Modalité de naissance - histoire de la maladie
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <input type="checkbox"> Terme : <input type="text">
+              <input type="checkbox">Score d'Apgar : <input type="text"><br>
+              <input type="checkbox">pH au cordon : <input type="text">
+              <input type="checkbox">Lactates au cordon : <input type="text"><br>
+              <input type="checkbox">Poids : <input type="text">
+              <input type="checkbox">Taille : <input type="text">
+              <input type="checkbox">PC : <input type="text">
+          </div>
+        </div>
+        </mat-expansion-panel><mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+             Evolution - Bilan paraclinique
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <input type="checkbox"> <label>Appareil respiratoire : <input type="text"></label> <br>
+            <input type="checkbox"> <label>Système cardio-vasculaire : <input type="text"></label><br>
+            <input type="checkbox"><label>Système digestif-Nutrition-Cathéters centraux : <input type="text"></label><br>
+            <input type="checkbox"><label>Appareil ostéo-articulaire et musculaire-Peau : <input type="text"></label><br>
+            <input type="checkbox"><label>Hématologie : <input type="text"></label><br>
+            <input type="checkbox"><label>Infections : <input type="text"></label><br>
+            <input type="checkbox"><label>Biologie : <input type="text"></label><br>
+            <input type="checkbox"><label>Sérovaccinations : <input type="text"></label><br>
+            <input type="checkbox"><label>Autres : <input type="text"></label><br>
+          </div>
+        </mat-expansion-panel><mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+             Orientation de l'enfant
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row"><br>
+            A la sortie <br>
+            <input type="checkbox"><label>Terme corrigé : <input type="text"></label><br>
+            <input type="checkbox"><label>Poids : <input type="text"></label>
+            <input type="checkbox"><label>Taille : <input type="text"></label>
+            <input type="checkbox"> <label>PC : <input type="text"></label><br>
+            <input type="checkbox"> <label>Traitement de sortie : <input type="text"></label><br>
+            <input type="checkbox"> <label>Suite à donner : <input type="text"></label><br>
+            <input type="checkbox"> <label>Adressage PMI : <select>
+              <option></option>
+              <option>PMI CANNES-OUEST</option>
+              <option>PMI CANNES-EST</option>
+              <option>PMI LE CANNET</option>
+              <option>PMI GRASSE</option>
+            <option>.....</option></select></label>
+          </div>
+        </mat-expansion-panel><mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+             Information parents/entourage
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row"><br>
+            <input type="checkbox"> Information médicale ciblés : <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group><br>
+            <input type="checkbox"> Information sur la prise en charge du nouveau-né : <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group><br>
+            <input type="checkbox"> Alimentation <br>
+            <input type="checkbox"> Nursing <br>
+            <input type="checkbox">Vaccination <br>
+            <input type="checkbox"> Autre : <input type="text">
+          </div>
+        </mat-expansion-panel><mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+             Risque au cours du séjour
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row"><br>
+            <input type="checkbox"> BMR/BHRE : <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group><br>
+            <input type="checkbox"> Transfusionnel : <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group><br>
+            <input type="checkbox"> Evènement indésirable : <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group><br>
+            <input type="checkbox">   Poste d'un DMI lors du séjour : <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group><br>
+          </div>
+        </mat-expansion-panel><mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+             Statut lettre de liaison Néonatologie
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row"><br>
+            <input type="checkbox">   Lettre remise aux parents en mains propres le jour de la sortie de leur nouveau-né : <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group><br>
+            <input type="checkbox">  Lettre adressé au médecin traitant : <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group> <input type="text"><br>
+          </div>
+        </mat-expansion-panel><mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+             Conclusion - Diagnostics
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row"><br>
+            Conclusion - Diagnostics <input type="text">
+          </div>
+        </mat-expansion-panel><mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+             Génération/historique lettre de liaison Néonatologie
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row"><br>
+            <button>Génerer lettre de liaison</button><br>
+            Historique :
+          </div>
+        </mat-expansion-panel>
+      </div>
+    </div>
+  </div>
+</section>

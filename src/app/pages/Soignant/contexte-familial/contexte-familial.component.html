@@ -1,0 +1,421 @@
+<app-toolbar></app-toolbar>
+<p class="nav-place-soignant"></p>
+<button  mat-icon-button routerLink="/Admission"><mat-icon>assignment</mat-icon>Accès formulaire Médecin</button>
+
+<section>
+  <div>
+    <div class="">
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Identification de l'enfant
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <label>Nom</label>
+              <input type="text">
+              <label>Prenom</label>
+              <input type="text">
+              <label>Sexe</label>
+              <select>
+                <option>Masculin</option>
+                <option>Féminin</option>
+                <option>Non définie</option>
+              </select><br><br>
+              <label>Age à l'entrée</label>
+              <input type="number" [(ngModel)]="Naissance">
+              <label>Poids à l'entrée</label>
+              <input type="number" [(ngModel)]="poids">kg <br><br>
+            </div>
+            <h3>Naisssance</h3>
+            <div class="content">
+              <label>Date</label>
+              <input type="date">
+              <label>Heure</label>
+              <input type="time">
+            </div>
+            <div class="content">
+              <label>Lieu</label>
+              <input type="text" style="width: 80%;"> <br><br>
+              <label>Terme de naissance</label>
+              <input type="number">
+              <label>Poids de naissance</label>
+              <input type="number">kg
+            </div><br>
+            <mat-radio-group aria-label="Select an option" required>
+              <mat-radio-button value="1" *ngIf="poids>30 && Naissance>20">Bracelet sur incubateur</mat-radio-button>
+              <br>
+              <mat-radio-button value="2">Bracelet d'identification</mat-radio-button><input type="text" *ngIf="2"><br>
+            </mat-radio-group>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Statut juridique
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <label>Titulaire de l'autorité parental</label>
+              <select [(ngModel)]="secondSelectValue">
+                <option value="Titulaire_Pere">Pére et mère</option>
+                <option value="Titulaire_Mere">Mère isolée</option>
+                <option value="Titulaire_Autre">Autre</option>
+                <input *ngIf="secondSelectValue" type="text">
+              </select>
+              <input type="text" *ngIf="secondSelectValue == 'Titulaire_Autre'">
+            </div><br>
+            <label>L'autorisation d'opérer à été obtenue</label>
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group><br><br>
+            <a href="">Importer autorisations de soins</a>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Parents
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <div class="tableau">
+                <div class="tablHeader">
+                  <mat-grid-list cols="10" rowHeight="10:1">
+                    <mat-grid-tile>Nom de jeune fille</mat-grid-tile>
+                    <mat-grid-tile>Nom</mat-grid-tile>
+                    <mat-grid-tile>Prenom</mat-grid-tile>
+                    <mat-grid-tile>Type parent</mat-grid-tile>
+                    <mat-grid-tile>Date de naiss</mat-grid-tile>
+                    <mat-grid-tile>Addresse postale</mat-grid-tile>
+                    <mat-grid-tile>Téléphone</mat-grid-tile>
+                    <mat-grid-tile>Email</mat-grid-tile>
+                    <mat-grid-tile>Langue</mat-grid-tile>
+                    <mat-grid-tile>Profession</mat-grid-tile>
+                  </mat-grid-list>
+                </div>
+                <mat-grid-list cols="10" rowHeight="5:1" class="tableInput">
+                  <mat-grid-tile><input matInput [(ngModel)]="val1" #ctrl="ngModel"></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><select [(ngModel)]="secondSelectValue">
+                      <option value="Titulaire_Pere">Parent 1</option>
+                      <option value="Titulaire_Mere">Parent 2</option>
+                    </select></mat-grid-tile>
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input type="tel"></mat-grid-tile>
+                  <mat-grid-tile><input type="email"></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                </mat-grid-list>
+                <div class="showInputField"></div>
+                <mat-grid-list cols="10" rowHeight="5:1" class="tableInput" *ngIf="val1 != ''">
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><select [(ngModel)]="secondSelectValue">
+                      <option value="Titulaire_Pere">Parent 1</option>
+                      <option value="Titulaire_Mere">Parent 2</option>
+                    </select></mat-grid-tile>
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input type="tel"></mat-grid-tile>
+                  <mat-grid-tile><input type="email"></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                </mat-grid-list>
+              </div>
+              <label>Parents vivant ensemble</label>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Oui</mat-radio-button>
+                <mat-radio-button value="2">Non</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Frères et soeurs
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <div class="tableau">
+                <div class="tablHeader">
+                  <mat-grid-list cols="6" rowHeight="10:1">
+                    <mat-grid-tile>Nom</mat-grid-tile>
+                    <mat-grid-tile>Prenom</mat-grid-tile>
+                    <mat-grid-tile>Date de naiss</mat-grid-tile>
+                    <mat-grid-tile>Place Fratrie</mat-grid-tile>
+                    <mat-grid-tile>Gémélité</mat-grid-tile>
+                    <mat-grid-tile>Adopté</mat-grid-tile>
+                  </mat-grid-list>
+                </div>
+                <mat-grid-list cols="6" rowHeight="10:1" class="tableInput">
+                  <mat-grid-tile><input matInput [(ngModel)]="val2" #ctrl="ngModel"></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><input type="number"></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input type="checkbox"></mat-grid-tile>
+                </mat-grid-list>
+                <div class="showInputField"></div>
+                <mat-grid-list cols="6" rowHeight="10:1" class="tableInput" *ngIf="val2 != ''">
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><input type="number"></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input type="checkbox"></mat-grid-tile>
+                </mat-grid-list>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Contexte social parents
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <div class="tableau">
+                <div class="tablHeader">
+                  <mat-grid-list cols="3" rowHeight="10:1">
+                    <mat-grid-tile>Situation familliale</mat-grid-tile>
+                    <mat-grid-tile>Lieu de vie de l'enfant</mat-grid-tile>
+                    <mat-grid-tile>Commentaire</mat-grid-tile>
+                  </mat-grid-list>
+                </div>
+                <mat-grid-list cols="3" rowHeight="10:1" class="tableInput">
+                  <mat-grid-tile><input matInput [(ngModel)]="val3" #ctrl="ngModel"></mat-grid-tile>
+                  <mat-grid-tile><select>
+                      <option>Non définie texte libre ?</option>
+                    </select></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                </mat-grid-list>
+                <div class="showInputField"></div>
+                <mat-grid-list cols="3" rowHeight="10:1" class="tableInput" *ngIf="val3 != ''">
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><select>
+                      <option>Non définie</option>
+                    </select></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                </mat-grid-list>
+                <div class="infoMere">
+                  <div class="content">
+                    <label>Couverture sociale :</label>
+                    <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button value="1">Oui</mat-radio-button>
+                      <mat-radio-button value="2">Non</mat-radio-button>
+                    </mat-radio-group>
+                    <mat-radio-group aria-label="Select an option" style="float: right ;">
+                      <mat-radio-button value="1">Oui</mat-radio-button>
+                      <mat-radio-button value="2">Non</mat-radio-button>
+                    </mat-radio-group>
+                    <label style="float: right;">Parent vivants ensemble :</label>
+                  </div>
+                  <div class="content">
+                    <label>ALD 100% :</label>
+                    <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button value="1">Oui</mat-radio-button>
+                      <mat-radio-button value="2">Non</mat-radio-button>
+                    </mat-radio-group>
+                    <label style="float: right;">Moyen de locomotion :
+                      <select>
+                        <option></option>
+                        <option></option>
+                        <option>Non définie</option>
+                      </select>
+                      <input type="text" name="" id=""></label>
+                  </div>
+                  <div class="content">
+                    <label>D3P :</label>
+                    <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button value="1">Oui</mat-radio-button>
+                      <mat-radio-button value="2">Non</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+                  <div class="content">
+                    <label>Contraintes et difficultés :</label>
+                    <input matInput>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Séjour à l'étranger
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <div class="tableau">
+                <div class="tablHeader">
+                  <mat-grid-list cols="5" rowHeight="10:1">
+                    <mat-grid-tile>Période de</mat-grid-tile>
+                    <mat-grid-tile>à</mat-grid-tile>
+                    <mat-grid-tile>Pays</mat-grid-tile>
+                    <mat-grid-tile>Durée</mat-grid-tile>
+                    <mat-grid-tile>Commentaire</mat-grid-tile>
+                  </mat-grid-list>
+                </div>
+                <mat-grid-list cols="5" rowHeight="10:1" class="tableInput">
+                  <mat-grid-tile><input type="date" [(ngModel)]="val4" #ctrl="ngModel"></mat-grid-tile>
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><select>
+                      <option>Non définie</option>
+                    </select></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                </mat-grid-list>
+                <div class="showInputField"></div>
+                <mat-grid-list cols="5" rowHeight="10:1" class="tableInput" *ngIf="val4 != ''">
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><select>
+                      <option>Non définie</option>
+                    </select></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                </mat-grid-list>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Souhait d'ordre religieux, éthique, culturel ...
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row"><br>
+            <textarea style="width: 100%;" matInput cdkTextareaAutosize></textarea>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Personnes ressources
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="content">
+              <div class="tableau">
+                <div class="tablHeader">
+                  <mat-grid-list cols="6" rowHeight="10:1">
+                    <mat-grid-tile>Nom</mat-grid-tile>
+                    <mat-grid-tile>Prénom</mat-grid-tile>
+                    <mat-grid-tile>Lien avec le patient</mat-grid-tile>
+                    <mat-grid-tile>Télèphone</mat-grid-tile>
+                    <mat-grid-tile>Adresse</mat-grid-tile>
+                    <mat-grid-tile>Ville</mat-grid-tile>
+                  </mat-grid-list>
+                </div>
+                <mat-grid-list cols="6" rowHeight="10:1" class="tableInput">
+                  <mat-grid-tile><input type="date" [(ngModel)]="val4" #ctrl="ngModel"></mat-grid-tile>
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><select>
+                      <option></option>
+                      <option></option>
+                      <option>Non définie</option>
+                    </select></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                </mat-grid-list>
+                <div class="showInputField"></div>
+                <mat-grid-list cols="6" rowHeight="10:1" class="tableInput" *ngIf="val4 != ''">
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><input type="date"></mat-grid-tile>
+                  <mat-grid-tile><select>
+                      <option></option>
+                      <option></option>
+                      <option>Non définie</option>
+                    </select></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                  <mat-grid-tile><input matInput></mat-grid-tile>
+                </mat-grid-list>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Remise du livret d’accueil
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Oui</mat-radio-button>
+              <mat-radio-button value="2">Non</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Diagnostic médical
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <textarea cols="30" rows="1"></textarea>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Observation médical
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <a href="">Visualiser</a>
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="row">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header class="panel">
+            <mat-panel-title>
+              Motif d'hospitalisation
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <textarea cols="30" rows="2"></textarea>
+          </div>
+        </mat-expansion-panel>
+      </div>
+    </div>
+  </div>
+</section>
