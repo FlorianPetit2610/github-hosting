@@ -1,7 +1,7 @@
 <app-toolbar-med></app-toolbar-med>
-<p class="nav-place-med"></p>
+<p class="nav-place-med">
 
-<button  mat-icon-button routerLink="/contexteFamilial"><mat-icon>assignment</mat-icon>Accès formulaire soignant</button>
+<button routerLink="/contexteFamilial">Accès formulaire soignant</button>
 
 <section>
   <div>
@@ -99,12 +99,12 @@
                 <input type="text">
               </div>
               <div class="content">
-                <mat-radio-group aria-label="Select an option" [(ngModel)]="Admission" #ctrl="ngModel"
+                <fieldset aria-label="Select an option" [(ngModel)]="Admission" #ctrl="ngModel"
                   required>
-                  <mat-radio-button value="1"> Dossier </mat-radio-button>
-                  <mat-radio-button value="2"> Carnet de santé </mat-radio-button>
-                  <mat-radio-button value="3"> Autre à preciser <input type="text"></mat-radio-button>
-                </mat-radio-group>
+                  <input type="radio" value="1"> Dossier 
+                  <input type="radio" value="2"> Carnet de santé 
+                  <input type="radio" value="3"> Autre à preciser <input type="text">
+                </fieldset>
               </div>
               <div class="content">
                 <label>Faits à signaler (SAMU / Ambulance) </label>
@@ -112,7 +112,7 @@
               </div>
               <label> Scan de la fiche SAMU</label>
               <a href=" ">Sélectionner le document scanné</a><br>
-              <mat-radio-button>T.M.F</mat-radio-button><br>
+              <input type="radio">T.M.F<br>
               <div class="content"><label>Date de transfert </label>
                 <input type="date"><br>
                 <label>Indications <input type="text"></label><br>

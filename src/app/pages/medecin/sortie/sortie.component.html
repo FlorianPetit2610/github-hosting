@@ -1,6 +1,6 @@
 <app-toolbar-med></app-toolbar-med>
 <p class="nav-place-med"></p>
-<button  mat-icon-button routerLink="/contexteFamilial"><mat-icon>assignment</mat-icon>Accès formulaire soignant</button>
+<button   routerLink="/contexteFamilial">Accès formulaire soignant</button>
 
 <section>
   <div>
@@ -143,14 +143,14 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="row"><br>
-            <input type="checkbox"> Information médicale ciblés : <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oui</mat-radio-button>
-              <mat-radio-button value="2">Non</mat-radio-button>
-            </mat-radio-group><br>
-            <input type="checkbox"> Information sur la prise en charge du nouveau-né : <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oui</mat-radio-button>
-              <mat-radio-button value="2">Non</mat-radio-button>
-            </mat-radio-group><br>
+            <input type="checkbox"> Information médicale ciblés : <fieldset aria-label="Select an option">
+              <input type="radio" value="1">Oui
+              <input type="radio" value="2">Non
+            </fieldset><br>
+            <input type="checkbox"> Information sur la prise en charge du nouveau-né : <fieldset aria-label="Select an option">
+              <input type="radio" value="1">Oui
+              <input type="radio" value="2">Non
+            </fieldset><br>
             <input type="checkbox"> Alimentation <br>
             <input type="checkbox"> Nursing <br>
             <input type="checkbox">Vaccination <br>
@@ -163,22 +163,22 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="row"><br>
-            <input type="checkbox"> BMR/BHRE : <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oui</mat-radio-button>
-              <mat-radio-button value="2">Non</mat-radio-button>
-            </mat-radio-group><br>
-            <input type="checkbox"> Transfusionnel : <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oui</mat-radio-button>
-              <mat-radio-button value="2">Non</mat-radio-button>
-            </mat-radio-group><br>
-            <input type="checkbox"> Evènement indésirable : <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oui</mat-radio-button>
-              <mat-radio-button value="2">Non</mat-radio-button>
-            </mat-radio-group><br>
-            <input type="checkbox">   Poste d'un DMI lors du séjour : <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oui</mat-radio-button>
-              <mat-radio-button value="2">Non</mat-radio-button>
-            </mat-radio-group><br>
+            <input type="checkbox"> BMR/BHRE : <fieldset aria-label="Select an option">
+              <input type="radio" value="1">Oui
+              <input type="radio" value="2">Non
+            </fieldset><br>
+            <input type="checkbox"> Transfusionnel : <fieldset aria-label="Select an option">
+              <input type="radio" value="1">Oui
+              <input type="radio" value="2">Non
+            </fieldset><br>
+            <input type="checkbox"> Evènement indésirable : <fieldset aria-label="Select an option">
+              <input type="radio" value="1">Oui
+              <input type="radio" value="2">Non
+            </fieldset><br>
+            <input type="checkbox">   Poste d'un DMI lors du séjour : <fieldset aria-label="Select an option">
+              <input type="radio" value="1">Oui
+              <input type="radio" value="2">Noni
+            </fieldset><br>
           </div>
         </mat-expansion-panel><mat-expansion-panel [expanded]="true">
           <mat-expansion-panel-header class="panel">
@@ -187,14 +187,14 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="row"><br>
-            <input type="checkbox">   Lettre remise aux parents en mains propres le jour de la sortie de leur nouveau-né : <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oui</mat-radio-button>
-              <mat-radio-button value="2">Non</mat-radio-button>
-            </mat-radio-group><br>
-            <input type="checkbox">  Lettre adressé au médecin traitant : <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Oui</mat-radio-button>
-              <mat-radio-button value="2">Non</mat-radio-button>
-            </mat-radio-group> <input type="text"><br>
+            <input type="checkbox">   Lettre remise aux parents en mains propres le jour de la sortie de leur nouveau-né : <fieldset aria-label="Select an option">
+              <input type="radio" value="1">Oui
+              <input type="radio" value="2">Non
+            </fieldset><br>
+            <input type="checkbox">  Lettre adressé au médecin traitant : <fieldset aria-label="Select an option">
+              <input type="radio" value="1">Oui
+              <input type="radio" value="2">Non
+            </fieldset> <input type="text"><br>
           </div>
         </mat-expansion-panel><mat-expansion-panel [expanded]="true">
           <mat-expansion-panel-header class="panel">

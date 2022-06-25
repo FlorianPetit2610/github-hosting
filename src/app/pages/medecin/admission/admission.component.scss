@@ -55,9 +55,7 @@ label{
       height: 60px;
     }
   }
-  .mat-radio-button{
-    margin-right: 10px;
-  }
+
   .souligner{
     text-decoration: underline;
   }
@@ -65,9 +63,7 @@ label{
     position: absolute;
     left: 5px;
   }
-  .mat-radio-container-no-show .mat-radio-container {
-    display: none;
-  }
+
   
   .spacer {
     flex: 1 1 auto;
@@ -109,20 +105,7 @@ label{
     background:  rgb(219, 227, 245);
   }
   
-  .mat-button-toggle-checked {
-    background-color: white !important;
-  
-  }
-  .mat-button-toggle-label-content{
-    height: 20px;
-  }
-  .mat-button-toggle-group {
-    height: 32px;
-    align-items: center;
-  }
-  
-  .mat-toolbar.color-toolbar.mat-toolbar-single-row{
-    height: 0%;
-  }
+
+
   
   

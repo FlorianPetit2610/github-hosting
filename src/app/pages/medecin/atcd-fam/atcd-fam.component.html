@@ -1,7 +1,7 @@
 <app-toolbar-med></app-toolbar-med>
 <p class="nav-place-med"></p>
-<button mat-icon-button routerLink="/contexteFamilial">
-  <mat-icon>assignment</mat-icon>Accès formulaire soignant
+<button  routerLink="/contexteFamilial">
+  Accès formulaire soignant
 </button>
 <section>
   <div>
@@ -17,10 +17,10 @@
             <div class="content">
               <div class="content">
                 <label>Consanguinité des parents :</label>
-                <mat-radio-group aria-label="Select an option">
-                  <mat-radio-button value="1">Oui</mat-radio-button>
-                  <mat-radio-button value="2">Non</mat-radio-button>
-                </mat-radio-group>
+                <fieldset aria-label="Select an option">
+                  <input type="radio" value="1">Oui
+                  <input type="radio" value="2">Non
+                </fieldset>
               </div>
               <div class="content">
                 <label>Tabagisme des parents :</label>
@@ -33,11 +33,11 @@
               </div>
               <div>
                 <label>Antécédents famliaux</label>
-                <mat-radio-group aria-label="Select an option" [(ngModel)]="AntecedentsFamiliaux" #ctrl="ngModel"
+                <fieldset aria-label="Select an option" [(ngModel)]="AntecedentsFamiliaux" #ctrl="ngModel"
                   required>
-                  <mat-radio-button value="1">Oui</mat-radio-button>
-                  <mat-radio-button value="2">Non</mat-radio-button>
-                </mat-radio-group>
+                  <input type="radio" value="1">Oui
+                  <input type="radio" value="2">Non
+                </fieldset>
               </div>
               <div class="content">
                 <label>Antécédents de la fratrie <textarea cols="50" rows="1"></textarea></label>

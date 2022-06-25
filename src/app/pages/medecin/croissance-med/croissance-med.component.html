@@ -1,7 +1,7 @@
 <app-toolbar-med></app-toolbar-med>
 <p class="nav-place-med"></p>
-<button mat-icon-button routerLink="/contexteFamilial">
-  <mat-icon>assignment</mat-icon>Accès formulaire soignant
+<button  routerLink="/contexteFamilial">
+  Accès formulaire soignant
 </button>
 <div class="row">
   <div class="content">
@@ -93,17 +93,16 @@
     </div>
   </div>
   <p>Choix de la courbe</p>
-  <mat-radio-group aria-label="Select an option">
-    <mat-radio-button value="1">Courbe fille</mat-radio-button>
-    <mat-radio-button value="2">Courbe garçon</mat-radio-button>
-  </mat-radio-group><br><br>
+  <fieldset aria-label="Select an option">
+    <input type="radio" value="1">Courbe fille
+    <input type="radio" value="2">Courbe garçon
+  </fieldset><br><br>
   <label>Données de suivi enfant</label>
   <p> Ordre de tri des tableaux
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">Croissant</mat-radio-button>
-      <mat-radio-button value="2">Décroissant</mat-radio-button>
-    </mat-radio-group>
-  </p>
+    <fieldset aria-label="Select an option">
+      <input type="radio"value="1">Croissant
+      <input type="radio" value="2">Décroissant
+    </fieldset>
   <p><input type="checkbox"> Afficher toutes les données</p>
 </div>
 <mat-expansion-panel [expanded]="true">
